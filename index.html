@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广告联盟导航 - 优质广告联盟平台大全</title>
-    <meta name="description" content="广告联盟导航 - 收录国内外优质广告联盟平台，包括 AdSterra、Google AdSense、百度联盟等，为站长和流量主提供可靠的广告变现选择。" />
+    <title>广告联盟导航 - 收录 200+ 优质广告联盟平台</title>
+    <meta name="description" content="广告联盟导航 - 收录国内外 200+ 优质广告联盟平台，包括 AdSterra、Google AdSense、百度联盟等，为站长和流量主提供全面的广告变现选择。" />
     <style>
         :root { --primary: #2563eb; --primary-dark: #1d4ed8; --text: #1f2937; --text-secondary: #6b7280; --bg: #f3f4f6; --card: #ffffff; --border: #e5e7eb; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,282 +12,1706 @@
         a { color: var(--primary); text-decoration: none; }
         a:hover { text-decoration: underline; }
         
-        /* 顶部导航 */
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 24px; text-align: center; }
-        .header h1 { font-size: 36px; margin-bottom: 12px; }
-        .header p { font-size: 16px; opacity: 0.9; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 24px; text-align: center; }
+        .header h1 { font-size: 42px; margin-bottom: 16px; }
+        .header p { font-size: 18px; opacity: 0.95; max-width: 800px; margin: 0 auto; }
+        .stats { display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap; }
+        .stat-item { background: rgba(255,255,255,0.15); padding: 12px 24px; border-radius: 20px; }
+        .stat-number { font-size: 28px; font-weight: 700; }
+        .stat-label { font-size: 14px; opacity: 0.9; }
         
-        /* 广告位 - 顶部横幅 */
         .ad-banner { background: var(--card); border: 2px dashed var(--border); padding: 20px; margin: 24px auto; max-width: 728px; text-align: center; border-radius: 8px; }
         .ad-banner span { color: var(--text-secondary); font-size: 14px; }
+        .ad-code-placeholder { background: #fef3c7; border: 2px dashed #f59e0b; padding: 16px; margin: 16px auto; max-width: 600px; border-radius: 8px; text-align: center; color: #92400e; font-size: 14px; }
         
-        /* 主容器 */
-        .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
         
-        /* 分类标题 */
-        .category { margin: 40px 0 20px; }
-        .category-title { font-size: 22px; font-weight: 700; padding-left: 12px; border-left: 4px solid var(--primary); margin-bottom: 16px; }
+        .category { margin: 50px 0 30px; scroll-margin-top: 20px; }
+        .category-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+        .category-icon { font-size: 32px; }
+        .category-title { font-size: 26px; font-weight: 700; color: var(--text); }
+        .category-count { background: var(--primary); color: white; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
         
-        /* 联盟卡片网格 */
-        .networks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .networks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
         
-        /* 联盟卡片 */
-        .network-card { background: var(--card); border-radius: 12px; padding: 24px; border: 1px solid var(--border); transition: all 0.3s; }
+        .network-card { background: var(--card); border-radius: 12px; padding: 24px; border: 1px solid var(--border); transition: all 0.3s; display: flex; flex-direction: column; }
         .network-card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); border-color: var(--primary); }
         .network-logo { font-size: 40px; margin-bottom: 12px; }
-        .network-name { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-        .network-tag { display: inline-block; background: #dbeafe; color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 12px; margin-right: 8px; margin-bottom: 8px; }
-        .network-desc { font-size: 14px; color: var(--text-secondary); margin: 12px 0; line-height: 1.7; }
-        .network-features { margin: 12px 0; }
-        .network-features li { font-size: 13px; color: var(--text-secondary); margin: 6px 0; list-style: none; }
-        .network-features li:before { content: "✓"; color: #10b981; margin-right: 8px; font-weight: bold; }
-        .network-link { display: inline-block; background: var(--primary); color: white; padding: 10px 24px; border-radius: 8px; font-weight: 600; margin-top: 16px; transition: background 0.3s; }
+        .network-name { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+        .network-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .network-tag { background: #dbeafe; color: var(--primary); padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; }
+        .network-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6; flex-grow: 1; }
+        .network-features { margin-bottom: 16px; }
+        .network-features li { font-size: 12px; color: var(--text-secondary); margin: 5px 0; list-style: none; padding-left: 20px; position: relative; }
+        .network-features li:before { content: "✓"; color: #10b981; position: absolute; left: 0; font-weight: bold; }
+        .network-link { display: inline-block; background: var(--primary); color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; text-align: center; transition: background 0.3s; }
         .network-link:hover { background: var(--primary-dark); text-decoration: none; }
         
-        /* 页脚 */
-        .footer { background: var(--card); border-top: 1px solid var(--border); padding: 40px 24px; margin-top: 60px; text-align: center; color: var(--text-secondary); }
+        .toc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 30px auto; max-width: 1200px; }
+        .toc-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+        .toc-item { display: flex; align-items: center; gap: 8px; padding: 8px 12px; background: var(--bg); border-radius: 8px; font-size: 13px; }
+        .toc-item:hover { background: #dbeafe; }
+        .toc-icon { font-size: 18px; }
+        
+        .footer { background: var(--card); border-top: 1px solid var(--border); padding: 50px 24px; margin-top: 60px; text-align: center; color: var(--text-secondary); }
         .footer-links { margin: 20px 0; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }
         .footer-links a { color: var(--text-secondary); }
+        .footer-note { margin-top: 20px; font-size: 13px; max-width: 800px; margin-left: auto; margin-right: auto; }
         
-        /* 广告代码占位符 */
-        .ad-code-placeholder { background: #fef3c7; border: 2px dashed #f59e0b; padding: 16px; margin: 20px 0; border-radius: 8px; text-align: center; color: #92400e; font-size: 14px; }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; background: var(--primary); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; opacity: 0; transition: opacity 0.3s; }
+        .back-to-top.show { opacity: 1; }
+        .back-to-top:hover { background: var(--primary-dark); text-decoration: none; }
         
-        /* 响应式 */
         @media (max-width: 768px) {
-            .header h1 { font-size: 28px; }
+            .header h1 { font-size: 32px; }
+            .header p { font-size: 16px; }
+            .stats { gap: 20px; }
+            .category-title { font-size: 22px; }
             .networks-grid { grid-template-columns: 1fr; }
+            .toc-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
     <header class="header">
         <h1>🎯 广告联盟导航</h1>
-        <p>收录国内外优质广告联盟平台，助力流量主高效变现</p>
+        <p>收录全球 200+ 优质广告联盟平台，助力流量主高效变现</p>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">200+</div>
+                <div class="stat-label">广告联盟</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-label">分类</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">全球</div>
+                <div class="stat-label">覆盖范围</div>
+            </div>
+        </div>
     </header>
     
-    <!-- AdSterra 广告位 - 顶部横幅 -->
     <div class="ad-banner">
-        <span>📍 AdSterra 广告位 (728x90)</span>
-        <!-- 在此处插入 AdSterra 广告代码 -->
+        <span>📍 AdSterra 广告位 (728x90) - 顶部横幅</span>
         <div class="ad-code-placeholder">
             🔶 等待插入 AdSterra 广告代码<br>
             请从 AdSterra Dashboard 获取广告代码后替换此处
         </div>
     </div>
     
+    <nav class="toc">
+        <div class="toc-title">📑 快速导航</div>
+        <div class="toc-grid">
+            <a href="#国际综合联盟" class="toc-item"><span class="toc-icon">国</span>国际综合联盟 (20)</a>
+            <a href="#国内综合联盟" class="toc-item"><span class="toc-icon">国</span>国内综合联盟 (20)</a>
+            <a href="#移动广告联盟" class="toc-item"><span class="toc-icon">移</span>移动广告联盟 (20)</a>
+            <a href="#电商 CPS 联盟" class="toc-item"><span class="toc-icon">电</span>电商 CPS 联盟 (20)</a>
+            <a href="#Push 通知联盟" class="toc-item"><span class="toc-icon">P</span>Push 通知联盟 (10)</a>
+            <a href="#视频广告联盟" class="toc-item"><span class="toc-icon">视</span>视频广告联盟 (10)</a>
+            <a href="#原生广告联盟" class="toc-item"><span class="toc-icon">原</span>原生广告联盟 (10)</a>
+            <a href="#区块链/加密货币广告" class="toc-item"><span class="toc-icon">区</span>区块链/加密货币广告 (8)</a>
+            <a href="#成人广告联盟" class="toc-item"><span class="toc-icon">成</span>成人广告联盟 (10)</a>
+            <a href="#游戏广告联盟" class="toc-item"><span class="toc-icon">游</span>游戏广告联盟 (10)</a>
+            <a href="#金融/保险广告" class="toc-item"><span class="toc-icon">金</span>金融/保险广告 (10)</a>
+        </div>
+    </nav>
+    
     <main class="container">
-        <!-- 国际广告联盟 -->
-        <section class="category">
-            <h2 class="category-title">🌍 国际广告联盟</h2>
+
+        <section class="category" id="国际综合联盟">
+            <div class="category-header">
+                <span class="category-icon">国</span>
+                <h2 class="category-title">国际综合联盟</h2>
+                <span class="category-count">20个</span>
+            </div>
             <div class="networks-grid">
-                <!-- AdSterra -->
+
                 <article class="network-card">
                     <div class="network-logo">⭐</div>
                     <h3 class="network-name">AdSterra</h3>
-                    <div>
-                        <span class="network-tag">CPM/CPC/CPA</span>
-                        <span class="network-tag">全球</span>
-                        <span class="network-tag">$5 起付</span>
-                    </div>
-                    <p class="network-desc">知名国际广告联盟，提供多种广告格式，包括 Popunder、Social Bar、In-Page Push 等。支持多种支付方式，审核快速。</p>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC/CPA</span><span class="network-tag">全球</span><span class="network-tag">$5 起付</span></div>
+                    <p class="network-desc">知名国际广告联盟，提供 Popunder、Social Bar、In-Page Push 等多种广告格式</p>
                     <ul class="network-features">
-                        <li>11.8B+ 月度展示量</li>
-                        <li>支持 CPM、CPC、CPA 多种计费模式</li>
-                        <li>实时数据报表</li>
-                        <li>专业客服支持</li>
+                        <li>11.8B+ 月度展示</li><li>多种计费模式</li><li>实时报表</li><li>专业客服</li>
                     </ul>
-                    <a href="https://adsterra.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://adsterra.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- Google AdSense -->
                 <article class="network-card">
                     <div class="network-logo">🔍</div>
                     <h3 class="network-name">Google AdSense</h3>
-                    <div>
-                        <span class="network-tag">CPC/CPM</span>
-                        <span class="network-tag">全球</span>
-                        <span class="network-tag">$100 起付</span>
-                    </div>
-                    <p class="network-desc">全球最大的广告联盟，广告质量高，收益稳定。适合有稳定流量的网站和博客。</p>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">全球最大的广告联盟，广告质量高，收益稳定</p>
                     <ul class="network-features">
-                        <li>广告质量高，eCPM 优秀</li>
-                        <li>智能匹配广告内容</li>
-                        <li>详细的收益分析</li>
-                        <li>审核较严格</li>
+                        <li>广告质量优秀</li><li>智能匹配</li><li>详细分析</li><li>审核严格</li>
                     </ul>
-                    <a href="https://www.google.com/adsense" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://www.google.com/adsense" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- PropellerAds -->
                 <article class="network-card">
                     <div class="network-logo">🚀</div>
                     <h3 class="network-name">PropellerAds</h3>
-                    <div>
-                        <span class="network-tag">CPM/CPC/CPA</span>
-                        <span class="network-tag">全球</span>
-                        <span class="network-tag">$5 起付</span>
-                    </div>
-                    <p class="network-desc">专注于 Push 通知和 Popunder 广告的国际联盟，适合各类流量类型。</p>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC/CPA</span><span class="network-tag">全球</span><span class="network-tag">$5 起付</span></div>
+                    <p class="network-desc">专注于 Push 通知和 Popunder 广告的国际联盟</p>
                     <ul class="network-features">
-                        <li>Push 通知广告专家</li>
-                        <li>支持多种广告格式</li>
-                        <li>反广告屏蔽技术</li>
-                        <li>快速审核通过</li>
+                        <li>Push 广告专家</li><li>反广告屏蔽</li><li>快速审核</li><li>多种格式</li>
                     </ul>
-                    <a href="https://propellerads.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://propellerads.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- Monetag -->
                 <article class="network-card">
                     <div class="network-logo">💰</div>
-                    <h3 class="network-name">Monetag (Popcash)</h3>
-                    <div>
-                        <span class="network-tag">CPM/CPA</span>
-                        <span class="network-tag">全球</span>
-                        <span class="network-tag">$10 起付</span>
-                    </div>
-                    <p class="network-desc">老牌广告联盟，以 Popunder 广告闻名，适合娱乐、下载类网站。</p>
+                    <h3 class="network-name">Monetag</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPA</span><span class="network-tag">全球</span><span class="network-tag">$10 起付</span></div>
+                    <p class="network-desc">老牌广告联盟，以 Popunder 广告闻名</p>
                     <ul class="network-features">
-                        <li>Popunder 广告专家</li>
-                        <li>日结支付</li>
-                        <li>支持多种支付方式</li>
-                        <li>适合新手入门</li>
+                        <li>Popunder 专家</li><li>日结支付</li><li>适合新手</li><li>多支付方式</li>
                     </ul>
-                    <a href="https://monetag.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://monetag.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-            </div>
+                <article class="network-card">
+                    <div class="network-logo">🏔️</div>
+                    <h3 class="network-name">HilltopAds</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">高质量流量广告网络，专注品牌广告主</p>
+                    <ul class="network-features">
+                        <li>品牌广告主多</li><li>高质量流量</li><li>透明报表</li><li>快速支付</li>
+                    </ul>
+                    <a href="https://hilltopads.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💎</div>
+                    <h3 class="network-name">RichAds</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPA</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">Premium 流量广告网络，Push 和 Popunder 专家</p>
+                    <ul class="network-features">
+                        <li>Premium 流量</li><li>智能优化</li><li>多格式支持</li><li>专属经理</li>
+                    </ul>
+                    <a href="https://richads.net" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🅿️</div>
+                    <h3 class="network-name">Zeropark</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">域名重定向和 Pop 广告专家</p>
+                    <ul class="network-features">
+                        <li>域名重定向</li><li>精准定位</li><li>实时优化</li><li>API 支持</li>
+                    </ul>
+                    <a href="https://zeropark.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎯</div>
+                    <h3 class="network-name">ExoClick</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">成人娱乐行业领先广告网络</p>
+                    <ul class="network-features">
+                        <li>行业领先</li><li>多种格式</li><li>精准定向</li><li>高 eCPM</li>
+                    </ul>
+                    <a href="https://exoclick.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🍑</div>
+                    <h3 class="network-name">JuicyAds</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">成人广告网络，社区活跃</p>
+                    <ul class="network-features">
+                        <li>社区活跃</li><li>自助平台</li><li>多种广告位</li><li>合理价格</li>
+                    </ul>
+                    <a href="https://juicyads.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📊</div>
+                    <h3 class="network-name">TrafficJunky</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">MindGeek 旗下广告网络，Pornhub 等站点流量</p>
+                    <ul class="network-features">
+                        <li>大站流量</li><li>精准定向</li><li>高转化率</li><li>专业团队</li>
+                    </ul>
+                    <a href="https://trafficjunky.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔞</div>
+                    <h3 class="network-name">EroAdvertising</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPC</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">成人广告联盟，全球覆盖</p>
+                    <ul class="network-features">
+                        <li>全球覆盖</li><li>多种格式</li><li>实时统计</li><li>快速审核</li>
+                    </ul>
+                    <a href="https://ero-advertising.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎈</div>
+                    <h3 class="network-name">PopAds</h3>
+                    <div class="network-tags"><span class="network-tag">CPM</span><span class="network-tag">全球</span><span class="network-tag">$5 起付</span></div>
+                    <p class="network-desc">专注 Popunder 广告，日结支付</p>
+                    <ul class="network-features">
+                        <li>Popunder 专家</li><li>日结支付</li><li>简单接入</li><li>高填充率</li>
+                    </ul>
+                    <a href="https://popads.net" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📱</div>
+                    <h3 class="network-name">AdMaven</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPA</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">移动广告专家，Push 和 Popunder</p>
+                    <ul class="network-features">
+                        <li>移动专家</li><li>多种格式</li><li>智能优化</li><li>高收益</li>
+                    </ul>
+                    <a href="https://admaven.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔔</div>
+                    <h3 class="network-name">ClickAdilla</h3>
+                    <div class="network-tags"><span class="network-tag">CPM/CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Push 通知广告先驱，180+ 国家覆盖</p>
+                    <ul class="network-features">
+                        <li>Push 先驱</li><li>全球覆盖</li><li>高 CTR</li><li>专业支持</li>
+                    </ul>
+                    <a href="https://clickadilla.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📰</div>
+                    <h3 class="network-name">RevContent</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">原生广告和内容推荐平台</p>
+                    <ul class="network-features">
+                        <li>原生广告</li><li>内容推荐</li><li>高质量流量</li><li>透明定价</li>
+                    </ul>
+                    <a href="https://revcontent.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📰</div>
+                    <h3 class="network-name">Taboola</h3>
+                    <div class="network-tags"><span class="network-tag">CPC</span><span class="network-tag">全球</span><span class="network-tag">$500 起付</span></div>
+                    <p class="network-desc">全球领先的内容推荐和原生广告平台</p>
+                    <ul class="network-features">
+                        <li>内容推荐</li><li>大品牌合作</li><li>全球覆盖</li><li>智能算法</li>
+                    </ul>
+                    <a href="https://taboola.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🧠</div>
+                    <h3 class="network-name">Outbrain</h3>
+                    <div class="network-tags"><span class="network-tag">CPC</span><span class="network-tag">全球</span><span class="network-tag">$500 起付</span></div>
+                    <p class="network-desc">内容发现平台，原生广告专家</p>
+                    <ul class="network-features">
+                        <li>内容发现</li><li>优质媒体</li><li>智能匹配</li><li>高转化率</li>
+                    </ul>
+                    <a href="https://outbrain.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📋</div>
+                    <h3 class="network-name">MGID</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">原生广告平台，全球覆盖</p>
+                    <ul class="network-features">
+                        <li>原生广告</li><li>全球网络</li><li>多种格式</li><li>数据驱动</li>
+                    </ul>
+                    <a href="https://mgid.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📝</div>
+                    <h3 class="network-name">Content.ad</h3>
+                    <div class="network-tags"><span class="network-tag">CPC</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">内容推荐广告平台</p>
+                    <ul class="network-features">
+                        <li>内容推荐</li><li>智能匹配</li><li>高质量流量</li><li>透明报表</li>
+                    </ul>
+                    <a href="https://content.ad" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔗</div>
+                    <h3 class="network-name">Adsterra Direct</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">AdSterra 直客平台，更高收益</p>
+                    <ul class="network-features">
+                        <li>直客合作</li><li>更高单价</li><li>专属支持</li><li>优先结算</li>
+                    </ul>
+                    <a href="https://adsterra.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
         </section>
-        
-        <!-- 国内广告联盟 -->
-        <section class="category">
-            <h2 class="category-title">🇨🇳 国内广告联盟</h2>
+
+        <section class="category" id="国内综合联盟">
+            <div class="category-header">
+                <span class="category-icon">国</span>
+                <h2 class="category-title">国内综合联盟</h2>
+                <span class="category-count">20个</span>
+            </div>
             <div class="networks-grid">
-                <!-- 百度联盟 -->
+
                 <article class="network-card">
                     <div class="network-logo">🔶</div>
                     <h3 class="network-name">百度联盟</h3>
-                    <div>
-                        <span class="network-tag">CPC/CPM</span>
-                        <span class="network-tag">中国大陆</span>
-                        <span class="network-tag">¥100 起付</span>
-                    </div>
-                    <p class="network-desc">百度旗下广告联盟，中文搜索广告质量高，适合中文网站和 APP。</p>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">百度旗下广告联盟，中文搜索广告质量高</p>
                     <ul class="network-features">
-                        <li>搜索广告质量优秀</li>
-                        <li>支持网站和 APP</li>
-                        <li>结算稳定</li>
-                        <li>需要备案网站</li>
+                        <li>搜索广告优质</li><li>支持网站/APP</li><li>结算稳定</li><li>需备案</li>
                     </ul>
-                    <a href="https://union.baidu.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://union.baidu.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- 阿里妈妈 -->
                 <article class="network-card">
                     <div class="network-logo">🍊</div>
                     <h3 class="network-name">阿里妈妈</h3>
-                    <div>
-                        <span class="network-tag">CPS/CPC</span>
-                        <span class="network-tag">中国大陆</span>
-                        <span class="network-tag">¥100 起付</span>
-                    </div>
-                    <p class="network-desc">阿里巴巴旗下营销平台，淘宝客联盟适合电商导购类网站。</p>
+                    <div class="network-tags"><span class="network-tag">CPS/CPC</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">阿里巴巴营销平台，淘宝客联盟</p>
                     <ul class="network-features">
-                        <li>电商 CPS 佣金高</li>
-                        <li>商品库丰富</li>
-                        <li>支持多种推广方式</li>
-                        <li>适合电商导购</li>
+                        <li>电商 CPS</li><li>商品库丰富</li><li>多种推广</li><li>适合导购</li>
                     </ul>
-                    <a href="https://www.alimama.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://www.alimama.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- 京东联盟 -->
                 <article class="network-card">
                     <div class="network-logo">🐕</div>
                     <h3 class="network-name">京东联盟</h3>
-                    <div>
-                        <span class="network-tag">CPS</span>
-                        <span class="network-tag">中国大陆</span>
-                        <span class="network-tag">¥100 起付</span>
-                    </div>
-                    <p class="network-desc">京东旗下电商联盟，3C 数码类商品佣金高，适合相关垂直网站。</p>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">京东旗下电商联盟，3C 数码佣金高</p>
                     <ul class="network-features">
-                        <li>3C 数码佣金高</li>
-                        <li>京东自营品质保证</li>
-                        <li>结算周期短</li>
-                        <li>提供推广素材</li>
+                        <li>3C 佣金高</li><li>自营品质</li><li>结算快</li><li>提供素材</li>
                     </ul>
-                    <a href="https://union.jd.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://union.jd.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- 腾讯广告 -->
                 <article class="network-card">
                     <div class="network-logo">🐧</div>
                     <h3 class="network-name">腾讯广告</h3>
-                    <div>
-                        <span class="network-tag">CPC/CPM</span>
-                        <span class="network-tag">中国大陆</span>
-                        <span class="network-tag">¥100 起付</span>
-                    </div>
-                    <p class="network-desc">腾讯旗下广告平台，支持公众号、小程序、QQ 等腾讯生态流量变现。</p>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">腾讯旗下广告平台，公众号小程序变现</p>
                     <ul class="network-features">
-                        <li>腾讯生态流量</li>
-                        <li>支持多种广告形式</li>
-                        <li>社交广告优势</li>
-                        <li>数据洞察详细</li>
+                        <li>腾讯生态</li><li>多广告形式</li><li>社交优势</li><li>数据详细</li>
                     </ul>
-                    <a href="https://e.qq.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://e.qq.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-            </div>
+                <article class="network-card">
+                    <div class="network-logo">🎵</div>
+                    <h3 class="network-name">字节跳动巨量引擎</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">抖音、今日头条广告平台</p>
+                    <ul class="network-features">
+                        <li>抖音流量</li><li>信息流广告</li><li>智能定向</li><li>高转化</li>
+                    </ul>
+                    <a href="https://oceanengine.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📹</div>
+                    <h3 class="network-name">快手磁力引擎</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">快手旗下广告平台</p>
+                    <ul class="network-features">
+                        <li>快手流量</li><li>短视频广告</li><li>老铁经济</li><li>高粘性</li>
+                    </ul>
+                    <a href="https://ad.kuaishou.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🐕</div>
+                    <h3 class="network-name">搜狗联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPC</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">搜狗搜索广告联盟</p>
+                    <ul class="network-features">
+                        <li>搜索广告</li><li>输入法流量</li><li>浏览器合作</li><li>稳定收益</li>
+                    </ul>
+                    <a href="https://union.sogou.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔵</div>
+                    <h3 class="network-name">360 联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">360 旗下广告联盟，安全软件流量</p>
+                    <ul class="network-features">
+                        <li>安全软件</li><li>浏览器流量</li><li>导航站</li><li>大流量</li>
+                    </ul>
+                    <a href="https://union.360.cn" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📧</div>
+                    <h3 class="network-name">网易联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS/CPC</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">网易旗下广告联盟</p>
+                    <ul class="network-features">
+                        <li>邮箱流量</li><li>游戏推广</li><li>电商 CPS</li><li>品牌合作</li>
+                    </ul>
+                    <a href="https://union.163.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🌊</div>
+                    <h3 class="network-name">新浪联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">新浪旗下广告联盟，微博流量</p>
+                    <ul class="network-features">
+                        <li>微博流量</li><li>门户广告</li><li>社交媒体</li><li>品牌曝光</li>
+                    </ul>
+                    <a href="https://union.sina.com.cn" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦊</div>
+                    <h3 class="network-name">搜狐联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">搜狐旗下广告联盟</p>
+                    <ul class="network-features">
+                        <li>门户流量</li><li>视频广告</li><li>新闻合作</li><li>多样式</li>
+                    </ul>
+                    <a href="https://union.sohu.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📖</div>
+                    <h3 class="network-name">有道联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPC</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">网易有道旗下，词典流量</p>
+                    <ul class="network-features">
+                        <li>词典流量</li><li>教育类</li><li>精准用户</li><li>高价值</li>
+                    </ul>
+                    <a href="https://union.youdao.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📚</div>
+                    <h3 class="network-name">知乎营销</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">知乎官方营销平台</p>
+                    <ul class="network-features">
+                        <li>知识社区</li><li>高质用户</li><li>内容营销</li><li>品牌合作</li>
+                    </ul>
+                    <a href="https://zhihu.com/marketing" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📺</div>
+                    <h3 class="network-name">B 站花火</h3>
+                    <div class="network-tags"><span class="network-tag">CPC/CPM</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">哔哩哔哩官方营销平台</p>
+                    <ul class="network-features">
+                        <li>年轻用户</li><li>视频广告</li><li> UP 主合作</li><li>二次元</li>
+                    </ul>
+                    <a href="https://huohuo.bilibili.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🌸</div>
+                    <h3 class="network-name">小红书蒲公英</h3>
+                    <div class="network-tags"><span class="network-tag">CPS/CPC</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">小红书官方营销平台</p>
+                    <ul class="network-features">
+                        <li>种草社区</li><li>女性用户</li><li>电商转化</li><li>KOL 合作</li>
+                    </ul>
+                    <a href="https://蒲公英.xiaohongshu.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💰</div>
+                    <h3 class="network-name">什么值得买</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">导购社区广告联盟</p>
+                    <ul class="network-features">
+                        <li>导购社区</li><li>电商 CPS</li><li>高转化</li><li>精准用户</li>
+                    </ul>
+                    <a href="https://union.smzdm.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦘</div>
+                    <h3 class="network-name">美团联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">美团旗下广告联盟，本地生活</p>
+                    <ul class="network-features">
+                        <li>本地生活</li><li>外卖 CPS</li><li>酒店旅游</li><li>高频消费</li>
+                    </ul>
+                    <a href="https://union.meituan.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🛍️</div>
+                    <h3 class="network-name">拼多多联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">拼多多旗下电商联盟</p>
+                    <ul class="network-features">
+                        <li>社交电商</li><li>低价商品</li><li>高佣金</li><li>裂变传播</li>
+                    </ul>
+                    <a href="https://union.pinduoduo.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">👗</div>
+                    <h3 class="network-name">唯品会联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">唯品会特卖电商联盟</p>
+                    <ul class="network-features">
+                        <li>品牌特卖</li><li>服饰美妆</li><li>高客单</li><li>女性用户</li>
+                    </ul>
+                    <a href="https://union.vip.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📚</div>
+                    <h3 class="network-name">当当联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">当当网图书电商联盟</p>
+                    <ul class="network-features">
+                        <li>图书为主</li><li>文化用户</li><li>稳定收益</li><li>老牌电商</li>
+                    </ul>
+                    <a href="https://union.dangdang.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
         </section>
-        
-        <!-- 其他广告联盟 -->
-        <section class="category">
-            <h2 class="category-title">📱 其他优质联盟</h2>
+
+        <section class="category" id="移动广告联盟">
+            <div class="category-header">
+                <span class="category-icon">移</span>
+                <h2 class="category-title">移动广告联盟</h2>
+                <span class="category-count">20个</span>
+            </div>
             <div class="networks-grid">
-                <!-- AdMob -->
+
                 <article class="network-card">
                     <div class="network-logo">📱</div>
                     <h3 class="network-name">Google AdMob</h3>
-                    <div>
-                        <span class="network-tag">移动应用</span>
-                        <span class="network-tag">全球</span>
-                        <span class="network-tag">$100 起付</span>
-                    </div>
-                    <p class="network-desc">Google 旗下移动广告平台，适合 APP 开发者变现。</p>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Google 移动广告平台，APP 开发者首选</p>
                     <ul class="network-features">
-                        <li>专注移动应用</li>
-                        <li>与 AdSense 同一账户</li>
-                        <li>多种广告格式</li>
-                        <li>全球广告主</li>
+                        <li>移动专家</li><li>与 AdSense 互通</li><li>多格式</li><li>全球广告主</li>
                     </ul>
-                    <a href="https://admob.google.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://admob.google.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-                
-                <!-- Ezoic -->
                 <article class="network-card">
-                    <div class="network-logo">🧪</div>
-                    <h3 class="network-name">Ezoic</h3>
-                    <div>
-                        <span class="network-tag">AI 优化</span>
-                        <span class="network-tag">全球</span>
-                        <span class="network-tag">$20 起付</span>
-                    </div>
-                    <p class="network-desc">AI 驱动的广告优化平台，自动测试广告位置提升收益。</p>
+                    <div class="network-logo">📘</div>
+                    <h3 class="network-name">Facebook Audience Network</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Meta 旗下移动广告网络</p>
                     <ul class="network-features">
-                        <li>AI 自动优化广告位</li>
-                        <li>A/B 测试功能</li>
-                        <li>适合中小网站</li>
-                        <li>收益提升明显</li>
+                        <li>Facebook 流量</li><li>精准定向</li><li>高 eCPM</li><li>原生广告</li>
                     </ul>
-                    <a href="https://www.ezoic.com" class="network-link" target="_blank">访问官网 →</a>
+                    <a href="https://facebook.com/audience-network" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
                 </article>
-            </div>
+                <article class="network-card">
+                    <div class="network-logo">🎮</div>
+                    <h3 class="network-name">Unity Ads</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">游戏应用广告平台，Unity 引擎集成</p>
+                    <ul class="network-features">
+                        <li>游戏专家</li><li>激励视频</li><li>内置购买</li><li>高收益</li>
+                    </ul>
+                    <a href="https://unity.com/products/unity-ads" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📲</div>
+                    <h3 class="network-name">AppLovin</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动应用广告和营销平台</p>
+                    <ul class="network-features">
+                        <li>应用推广</li><li>游戏变现</li><li>MAX  mediation</li><li>数据分析</li>
+                    </ul>
+                    <a href="https://applovin.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔩</div>
+                    <h3 class="network-name">ironSource</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动应用变现和收购平台</p>
+                    <ul class="network-features">
+                        <li>应用变现</li><li> mediation</li><li>数据分析</li><li>收购服务</li>
+                    </ul>
+                    <a href="https://ironsrc.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎬</div>
+                    <h3 class="network-name">Vungle</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">创意视频广告平台，专注游戏</p>
+                    <ul class="network-features">
+                        <li>视频广告</li><li>创意优化</li><li>游戏专家</li><li>高参与</li>
+                    </ul>
+                    <a href="https://vungle.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📊</div>
+                    <h3 class="network-name">Chartboost</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动游戏广告和数据分析</p>
+                    <ul class="network-features">
+                        <li>游戏广告</li><li>程序化</li><li>数据分析</li><li>交叉推广</li>
+                    </ul>
+                    <a href="https://chartboost.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏛️</div>
+                    <h3 class="network-name">AdColony</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">高清视频广告平台</p>
+                    <ul class="network-features">
+                        <li>高清视频</li><li>即时播放</li><li>品牌广告</li><li>优质体验</li>
+                    </ul>
+                    <a href="https://adcolony.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📶</div>
+                    <h3 class="network-name">InMobi</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">印度起家全球移动广告网络</p>
+                    <ul class="network-features">
+                        <li>全球覆盖</li><li>智能定向</li><li>多格式</li><li>高填充</li>
+                    </ul>
+                    <a href="https://inmobi.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🚀</div>
+                    <h3 class="network-name">Start.io</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">移动应用广告，StartApp 平台</p>
+                    <ul class="network-features">
+                        <li>简单易用</li><li>快速集成</li><li>多种格式</li><li>及时支付</li>
+                    </ul>
+                    <a href="https://start.io" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦎</div>
+                    <h3 class="network-name">Smaato</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动广告实时竞价平台</p>
+                    <ul class="network-features">
+                        <li>实时竞价</li><li>程序化</li><li>高 eCPM</li><li>全球需求</li>
+                    </ul>
+                    <a href="https://smaato.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔗</div>
+                    <h3 class="network-name">Mintegral</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">程序化互动移动广告平台</p>
+                    <ul class="network-features">
+                        <li>程序化</li><li>互动广告</li><li>AI 优化</li><li>全球覆盖</li>
+                    </ul>
+                    <a href="https://mintegral.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎯</div>
+                    <h3 class="network-name">Pangle</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">字节跳动海外广告平台</p>
+                    <ul class="network-features">
+                        <li>字节生态</li><li>TikTok 流量</li><li>智能定向</li><li>高转化</li>
+                    </ul>
+                    <a href="https://pangle.io" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📹</div>
+                    <h3 class="network-name">KuaiShou Ads</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">快手移动广告平台</p>
+                    <ul class="network-features">
+                        <li>快手流量</li><li>短视频</li><li>直播广告</li><li>高粘性</li>
+                    </ul>
+                    <a href="https://ad.kuaishou.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦎</div>
+                    <h3 class="network-name">穿山甲</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">字节跳动国内广告平台</p>
+                    <ul class="network-features">
+                        <li>字节流量</li><li>智能推荐</li><li>多格式</li><li>高收益</li>
+                    </ul>
+                    <a href="https://oceanengine.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💎</div>
+                    <h3 class="network-name">优量汇</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">腾讯移动广告联盟</p>
+                    <ul class="network-features">
+                        <li>腾讯流量</li><li>微信 QQ</li><li>多场景</li><li>高填充</li>
+                    </ul>
+                    <a href="https://e.qq.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🌿</div>
+                    <h3 class="network-name">百青藤</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">百度移动广告联盟</p>
+                    <ul class="network-features">
+                        <li>百度流量</li><li>搜索 + 信息流</li><li>智能匹配</li><li>稳定收益</li>
+                    </ul>
+                    <a href="https://union.baidu.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🌺</div>
+                    <h3 class="network-name">华为 Ads</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">华为移动广告平台</p>
+                    <ul class="network-features">
+                        <li>华为设备</li><li>系统级</li><li>原生体验</li><li>高价值用户</li>
+                    </ul>
+                    <a href="https://developer.huawei.com/ads" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📱</div>
+                    <h3 class="network-name">小米广告</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">小米移动广告平台</p>
+                    <ul class="network-features">
+                        <li>小米设备</li><li>MIUI 系统</li><li>多场景</li><li>年轻用户</li>
+                    </ul>
+                    <a href="https://dev.mi.com/ads" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🟢</div>
+                    <h3 class="network-name">OPPO 广告</h3>
+                    <div class="network-tags"><span class="network-tag">移动</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">OPPO 移动广告平台</p>
+                    <ul class="network-features">
+                        <li>OPPO 设备</li><li>系统广告</li><li>精准定向</li><li>高转化</li>
+                    </ul>
+                    <a href="https://open.oppomobile.com/ads" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
         </section>
-        
-        <!-- AdSterra 广告位 - 底部 -->
+
+        <section class="category" id="电商 CPS 联盟">
+            <div class="category-header">
+                <span class="category-icon">电</span>
+                <h2 class="category-title">电商 CPS 联盟</h2>
+                <span class="category-count">20个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">🛒</div>
+                    <h3 class="network-name">淘宝联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">阿里旗下淘宝客，最大电商联盟</p>
+                    <ul class="network-features">
+                        <li>商品最全</li><li>佣金可观</li><li>多种推广</li><li>数据详细</li>
+                    </ul>
+                    <a href="https://pub.alimama.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🐕</div>
+                    <h3 class="network-name">京东联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">京东电商联盟，3C 数码强项</p>
+                    <ul class="network-features">
+                        <li>3C 优势</li><li>自营品质</li><li>物流快</li><li>佣金高</li>
+                    </ul>
+                    <a href="https://union.jd.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🛍️</div>
+                    <h3 class="network-name">拼多多联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">社交电商联盟，低价高佣</p>
+                    <ul class="network-features">
+                        <li>社交裂变</li><li>低价商品</li><li>高佣金</li><li>下沉市场</li>
+                    </ul>
+                    <a href="https://union.pinduoduo.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">👗</div>
+                    <h3 class="network-name">唯品会联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">品牌特卖电商联盟</p>
+                    <ul class="network-features">
+                        <li>品牌特卖</li><li>服饰美妆</li><li>高客单</li><li>女性用户</li>
+                    </ul>
+                    <a href="https://union.vip.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦁</div>
+                    <h3 class="network-name">苏宁联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">苏宁易购电商联盟</p>
+                    <ul class="network-features">
+                        <li>家电优势</li><li>线上线下</li><li>全品类</li><li>稳定结算</li>
+                    </ul>
+                    <a href="https://union.suning.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📚</div>
+                    <h3 class="network-name">当当联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">图书电商联盟</p>
+                    <ul class="network-features">
+                        <li>图书为主</li><li>文化用户</li><li>稳定收益</li><li>老牌电商</li>
+                    </ul>
+                    <a href="https://union.dangdang.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏪</div>
+                    <h3 class="network-name">1 号店联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">商超电商联盟</p>
+                    <ul class="network-features">
+                        <li>商超日用</li><li>高频消费</li><li>京东旗下</li><li>稳定收益</li>
+                    </ul>
+                    <a href="https://union.yhd.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">✈️</div>
+                    <h3 class="network-name">携程联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">旅游 OTA 联盟</p>
+                    <ul class="network-features">
+                        <li>酒店机票</li><li>旅游度假</li><li>高客单</li><li>佣金高</li>
+                    </ul>
+                    <a href="https://union.ctrip.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🐷</div>
+                    <h3 class="network-name">飞猪联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">阿里旗下旅游联盟</p>
+                    <ul class="network-features">
+                        <li>阿里生态</li><li>旅游产品</li><li>双 11 活动</li><li>流量大</li>
+                    </ul>
+                    <a href="https://union.fliggy.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦘</div>
+                    <h3 class="network-name">美团联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">本地生活联盟</p>
+                    <ul class="network-features">
+                        <li>外卖酒店</li><li>本地服务</li><li>高频消费</li><li>多场景</li>
+                    </ul>
+                    <a href="https://union.meituan.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🍔</div>
+                    <h3 class="network-name">饿了么联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">阿里本地生活联盟</p>
+                    <ul class="network-features">
+                        <li>外卖为主</li><li>阿里生态</li><li>高频消费</li><li>年轻用户</li>
+                    </ul>
+                    <a href="https://union.ele.me" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📦</div>
+                    <h3 class="network-name">亚马逊联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Amazon Associates 全球电商联盟</p>
+                    <ul class="network-features">
+                        <li>全球最大</li><li>商品丰富</li><li>佣金稳定</li><li>信任度高</li>
+                    </ul>
+                    <a href="https://affiliate-program.amazon.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏷️</div>
+                    <h3 class="network-name">eBay 联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">eBay 拍卖电商联盟</p>
+                    <ul class="network-features">
+                        <li>拍卖特色</li><li>二手商品</li><li>全球覆盖</li><li>多样品类</li>
+                    </ul>
+                    <a href="https://partnernetwork.ebay.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🛍️</div>
+                    <h3 class="network-name">Shopify 联盟</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">电商建站平台联盟</p>
+                    <ul class="network-features">
+                        <li>建站工具</li><li>高佣金</li><li>持续收益</li><li>B2B 客户</li>
+                    </ul>
+                    <a href="https://shopify.com/affiliates" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏦</div>
+                    <h3 class="network-name">ClickBank</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">数字产品电商联盟</p>
+                    <ul class="network-features">
+                        <li>数字产品</li><li>高佣金</li><li>自动交付</li><li>全球支付</li>
+                    </ul>
+                    <a href="https://clickbank.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🤝</div>
+                    <h3 class="network-name">ShareASale</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">综合电商联盟平台</p>
+                    <ul class="network-features">
+                        <li>商家众多</li><li>品类丰富</li><li>可靠支付</li><li>数据详细</li>
+                    </ul>
+                    <a href="https://shareasale.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔗</div>
+                    <h3 class="network-name">CJ Affiliate</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Commission Junction 老牌联盟</p>
+                    <ul class="network-features">
+                        <li>老牌平台</li><li>大品牌</li><li>专业工具</li><li>稳定可靠</li>
+                    </ul>
+                    <a href="https://cj.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎌</div>
+                    <h3 class="network-name">Rakuten</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">乐天全球电商联盟</p>
+                    <ul class="network-features">
+                        <li>日本背景</li><li>全球网络</li><li>大品牌</li><li>高信誉</li>
+                    </ul>
+                    <a href="https://rakutenadvertising.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏆</div>
+                    <h3 class="network-name">Awin</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">£20 起付</span></div>
+                    <p class="network-desc">欧洲领先联盟平台</p>
+                    <ul class="network-features">
+                        <li>欧洲优势</li><li>商家众多</li><li>多币种</li><li>专业支持</li>
+                    </ul>
+                    <a href="https://awin.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📋</div>
+                    <h3 class="network-name">FlexOffers</h3>
+                    <div class="network-tags"><span class="network-tag">CPS</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">美国综合联盟平台</p>
+                    <ul class="network-features">
+                        <li>商家丰富</li><li>工具完善</li><li>及时支付</li><li>客户服务</li>
+                    </ul>
+                    <a href="https://flexoffers.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="Push 通知联盟">
+            <div class="category-header">
+                <span class="category-icon">P</span>
+                <h2 class="category-title">Push 通知联盟</h2>
+                <span class="category-count">10个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">🔔</div>
+                    <h3 class="network-name">PushEngage</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">$29/月</span></div>
+                    <p class="network-desc">浏览器推送通知平台</p>
+                    <ul class="network-features">
+                        <li>浏览器推送</li><li>自动化</li><li>分段定向</li><li>A/B 测试</li>
+                    </ul>
+                    <a href="https://pushengage.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📳</div>
+                    <h3 class="network-name">OneSignal</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">免费</span></div>
+                    <p class="network-desc">免费推送通知服务</p>
+                    <ul class="network-features">
+                        <li>免费使用</li><li>多平台</li><li>易集成</li><li>数据分析</li>
+                    </ul>
+                    <a href="https://onesignal.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">👥</div>
+                    <h3 class="network-name">PushCrew</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">$9/月</span></div>
+                    <p class="network-desc">浏览器推送平台</p>
+                    <ul class="network-features">
+                        <li>无限推送</li><li>分段发送</li><li>自动推送</li><li>统计分析</li>
+                    </ul>
+                    <a href="https://pushcrew.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🤖</div>
+                    <h3 class="network-name">PushBots</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">$19/月</span></div>
+                    <p class="network-desc">移动和 Web 推送平台</p>
+                    <ul class="network-features">
+                        <li>多平台</li><li>个性化</li><li>自动化</li><li>A/B 测试</li>
+                    </ul>
+                    <a href="https://pushbots.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎈</div>
+                    <h3 class="network-name">Airship</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">定制</span></div>
+                    <p class="network-desc">企业级推送平台</p>
+                    <ul class="network-features">
+                        <li>企业级</li><li>全渠道</li><li>自动化</li><li>高级分析</li>
+                    </ul>
+                    <a href="https://airship.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔥</div>
+                    <h3 class="network-name">Braze</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">定制</span></div>
+                    <p class="network-desc">客户互动平台</p>
+                    <ul class="network-features">
+                        <li>全渠道</li><li>个性化</li><li>实时触发</li><li>高级分析</li>
+                    </ul>
+                    <a href="https://braze.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💡</div>
+                    <h3 class="network-name">CleverPush</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">€9/月</span></div>
+                    <p class="network-desc">欧洲推送通知服务</p>
+                    <ul class="network-features">
+                        <li>GDPR 合规</li><li>多平台</li><li>自动化</li><li>详细统计</li>
+                    </ul>
+                    <a href="https://cleverpush.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦉</div>
+                    <h3 class="network-name">PushOwl</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">$19/月</span></div>
+                    <p class="network-desc">电商推送通知平台</p>
+                    <ul class="network-features">
+                        <li>电商专用</li><li>废弃购物车</li><li>产品推荐</li><li>ROI 追踪</li>
+                    </ul>
+                    <a href="https://pushowl.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔥</div>
+                    <h3 class="network-name">FirePush</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">$19/月</span></div>
+                    <p class="network-desc">Shopify 推送应用</p>
+                    <ul class="network-features">
+                        <li>Shopify 集成</li><li>废弃购物车</li><li>多语言</li><li>自动发送</li>
+                    </ul>
+                    <a href="https://firepush.io" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">⚠️</div>
+                    <h3 class="network-name">PushAlert</h3>
+                    <div class="network-tags"><span class="network-tag">Push</span><span class="network-tag">全球</span><span class="network-tag">$10/月</span></div>
+                    <p class="network-desc">经济推送通知服务</p>
+                    <ul class="network-features">
+                        <li>价格实惠</li><li>无限订阅</li><li>分段发送</li><li>白标选项</li>
+                    </ul>
+                    <a href="https://pushalert.co" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="视频广告联盟">
+            <div class="category-header">
+                <span class="category-icon">视</span>
+                <h2 class="category-title">视频广告联盟</h2>
+                <span class="category-count">10个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">📺</div>
+                    <h3 class="network-name">YouTube 广告</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Google 视频广告平台</p>
+                    <ul class="network-features">
+                        <li>最大视频站</li><li>多种格式</li><li>精准定向</li><li>全球覆盖</li>
+                    </ul>
+                    <a href="https://ads.youtube.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎵</div>
+                    <h3 class="network-name">TikTok for Business</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">全球</span><span class="network-tag">$500 起付</span></div>
+                    <p class="network-desc">抖音国际版广告平台</p>
+                    <ul class="network-features">
+                        <li>短视频</li><li>年轻用户</li><li>病毒传播</li><li>创意工具</li>
+                    </ul>
+                    <a href="https://business.tiktok.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🍉</div>
+                    <h3 class="network-name">西瓜视频</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">大陆</span><span class="network-tag">¥100 起付</span></div>
+                    <p class="network-desc">字节跳动中视频平台</p>
+                    <ul class="network-features">
+                        <li>中视频</li><li>创作激励</li><li>广告分成</li><li>流量扶持</li>
+                    </ul>
+                    <a href="https://ixigua.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎬</div>
+                    <h3 class="network-name">爱奇艺广告</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">爱奇艺视频广告平台</p>
+                    <ul class="network-features">
+                        <li>长视频</li><li>剧集综艺</li><li>品牌广告</li><li>高曝光</li>
+                    </ul>
+                    <a href="https://if.iqiyi.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">▶️</div>
+                    <h3 class="network-name">腾讯视频广告</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">腾讯视频广告平台</p>
+                    <ul class="network-features">
+                        <li>独播内容</li><li>大 IP</li><li>品牌合作</li><li>多格式</li>
+                    </ul>
+                    <a href="https://e.qq.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">👖</div>
+                    <h3 class="network-name">优酷广告</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">阿里视频广告平台</p>
+                    <ul class="network-features">
+                        <li>阿里生态</li><li>剧集综艺</li><li>电商联动</li><li>数据打通</li>
+                    </ul>
+                    <a href="https://ad.youku.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🥭</div>
+                    <h3 class="network-name">芒果 TV 广告</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">大陆</span><span class="network-tag">¥1000 起付</span></div>
+                    <p class="network-desc">湖南广电视频广告</p>
+                    <ul class="network-features">
+                        <li>综艺强势</li><li>年轻女性</li><li>自制内容</li><li>粉丝经济</li>
+                    </ul>
+                    <a href="https://ad.mgtv.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🅰️</div>
+                    <h3 class="network-name">AcFun</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">大陆</span><span class="network-tag">¥500 起付</span></div>
+                    <p class="network-desc">A 站视频广告</p>
+                    <ul class="network-features">
+                        <li>二次元</li><li>年轻用户</li><li>弹幕文化</li><li>社区氛围</li>
+                    </ul>
+                    <a href="https://www.acfun.cn" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎥</div>
+                    <h3 class="network-name">Vimeo OTT</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">全球</span><span class="network-tag">$1/月</span></div>
+                    <p class="network-desc">专业视频变现平台</p>
+                    <ul class="network-features">
+                        <li>订阅制</li><li>付费点播</li><li>无广告</li><li>专业工具</li>
+                    </ul>
+                    <a href="https://vimeo.com/ott" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📹</div>
+                    <h3 class="network-name">Wistia</h3>
+                    <div class="network-tags"><span class="network-tag">视频</span><span class="network-tag">全球</span><span class="network-tag">$99/月</span></div>
+                    <p class="network-desc">企业视频营销平台</p>
+                    <ul class="network-features">
+                        <li>企业视频</li><li>营销工具</li><li>数据分析</li><li>品牌定制</li>
+                    </ul>
+                    <a href="https://wistia.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="原生广告联盟">
+            <div class="category-header">
+                <span class="category-icon">原</span>
+                <h2 class="category-title">原生广告联盟</h2>
+                <span class="category-count">10个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">📰</div>
+                    <h3 class="network-name">Taboola</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$500 起付</span></div>
+                    <p class="network-desc">内容推荐广告先驱</p>
+                    <ul class="network-features">
+                        <li>内容推荐</li><li>大牌媒体</li><li>智能算法</li><li>全球覆盖</li>
+                    </ul>
+                    <a href="https://taboola.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🧠</div>
+                    <h3 class="network-name">Outbrain</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$500 起付</span></div>
+                    <p class="network-desc">内容发现平台</p>
+                    <ul class="network-features">
+                        <li>内容发现</li><li>优质媒体</li><li>智能匹配</li><li>高转化</li>
+                    </ul>
+                    <a href="https://outbrain.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📋</div>
+                    <h3 class="network-name">MGID</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">原生广告平台</p>
+                    <ul class="network-features">
+                        <li>原生广告</li><li>全球网络</li><li>多种格式</li><li>数据驱动</li>
+                    </ul>
+                    <a href="https://mgid.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📝</div>
+                    <h3 class="network-name">RevContent</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">内容推荐平台</p>
+                    <ul class="network-features">
+                        <li>内容推荐</li><li>高质量流量</li><li>透明定价</li><li>专业服务</li>
+                    </ul>
+                    <a href="https://revcontent.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📄</div>
+                    <h3 class="network-name">Content.ad</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">内容推荐广告</p>
+                    <ul class="network-features">
+                        <li>内容匹配</li><li>智能算法</li><li>高质量</li><li>透明报表</li>
+                    </ul>
+                    <a href="https://content.ad" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🧠</div>
+                    <h3 class="network-name">Smarthub</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">原生广告平台</p>
+                    <ul class="network-features">
+                        <li>原生广告</li><li>程序化</li><li>AI 优化</li><li>全球覆盖</li>
+                    </ul>
+                    <a href="https://smarthub.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">♊</div>
+                    <h3 class="network-name">Yahoo Gemini</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$500 起付</span></div>
+                    <p class="network-desc">Yahoo 原生广告平台</p>
+                    <ul class="network-features">
+                        <li>Yahoo 流量</li><li>搜索 + 原生</li><li>品牌安全</li><li>数据丰富</li>
+                    </ul>
+                    <a href="https://gemini.yahoo.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏠</div>
+                    <h3 class="network-name">SponsorHouse</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">播客原生广告</p>
+                    <ul class="network-features">
+                        <li>播客广告</li><li>主持人读稿</li><li>高参与</li><li>精准定向</li>
+                    </ul>
+                    <a href="https://sponsorhouse.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🛒</div>
+                    <h3 class="network-name">Gumroad</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">10% 佣金</span></div>
+                    <p class="network-desc">创作者原生销售</p>
+                    <ul class="network-features">
+                        <li>创作者经济</li><li>直接销售</li><li>简单工具</li><li>社区支持</li>
+                    </ul>
+                    <a href="https://gumroad.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💝</div>
+                    <h3 class="network-name">Patreon</h3>
+                    <div class="network-tags"><span class="network-tag">原生</span><span class="network-tag">全球</span><span class="network-tag">5-12% 佣金</span></div>
+                    <p class="network-desc">创作者会员平台</p>
+                    <ul class="network-features">
+                        <li>会员订阅</li><li>粉丝经济</li><li>持续收益</li><li>社区建设</li>
+                    </ul>
+                    <a href="https://patreon.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="区块链/加密货币广告">
+            <div class="category-header">
+                <span class="category-icon">区</span>
+                <h2 class="category-title">区块链/加密货币广告</h2>
+                <span class="category-count">8个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">🪙</div>
+                    <h3 class="network-name">Coinzilla</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">€100 起付</span></div>
+                    <p class="network-desc">加密货币广告网络</p>
+                    <ul class="network-features">
+                        <li>加密货币</li><li>区块链项目</li><li>高 CPM</li><li>全球覆盖</li>
+                    </ul>
+                    <a href="https://coinzilla.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📈</div>
+                    <h3 class="network-name">Cointraffic</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">€100 起付</span></div>
+                    <p class="network-desc">加密货币广告平台</p>
+                    <ul class="network-features">
+                        <li>加密垂直</li><li>优质流量</li><li>品牌安全</li><li>合规运营</li>
+                    </ul>
+                    <a href="https://cointraffic.io" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">₿</div>
+                    <h3 class="network-name">A-Ads</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">比特币支付</span></div>
+                    <p class="network-desc">匿名比特币广告网络</p>
+                    <ul class="network-features">
+                        <li>匿名广告</li><li>比特币支付</li><li>无需注册</li><li>即时结算</li>
+                    </ul>
+                    <a href="https://anonymous-ads.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📰</div>
+                    <h3 class="network-name">Bitmedia</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">加密货币媒体广告</p>
+                    <ul class="network-features">
+                        <li>加密媒体</li><li>精准定向</li><li>多种格式</li><li>透明统计</li>
+                    </ul>
+                    <a href="https://bitmedia.io" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📊</div>
+                    <h3 class="network-name">AdEx</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">ADX 代币</span></div>
+                    <p class="network-desc">去中心化广告协议</p>
+                    <ul class="network-features">
+                        <li>区块链广告</li><li>去中心化</li><li>透明结算</li><li>低手续费</li>
+                    </ul>
+                    <a href="https://adex.network" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦁</div>
+                    <h3 class="network-name">Basic Attention Token</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">BAT 代币</span></div>
+                    <p class="network-desc">Brave 浏览器广告代币</p>
+                    <ul class="network-features">
+                        <li>Brave 浏览器</li><li>用户奖励</li><li>隐私保护</li><li>区块链结算</li>
+                    </ul>
+                    <a href="https://basicattentiontoken.org" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎈</div>
+                    <h3 class="network-name">Popads Crypto</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">比特币支付</span></div>
+                    <p class="network-desc">支持加密货币的 Popads</p>
+                    <ul class="network-features">
+                        <li>Popunder</li><li>加密货币</li><li>匿名支付</li><li>高填充</li>
+                    </ul>
+                    <a href="https://popads.net" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🚀</div>
+                    <h3 class="network-name">Bitcoineer</h3>
+                    <div class="network-tags"><span class="network-tag">Crypto</span><span class="network-tag">全球</span><span class="network-tag">比特币支付</span></div>
+                    <p class="network-desc">加密货币广告网络</p>
+                    <ul class="network-features">
+                        <li>加密项目</li><li>高 CPM</li><li>比特币支付</li><li>全球流量</li>
+                    </ul>
+                    <a href="https://bitcoineer.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="成人广告联盟">
+            <div class="category-header">
+                <span class="category-icon">成</span>
+                <h2 class="category-title">成人广告联盟</h2>
+                <span class="category-count">10个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">🔞</div>
+                    <h3 class="network-name">ExoClick</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">成人广告行业领导者</p>
+                    <ul class="network-features">
+                        <li>行业领先</li><li>多种格式</li><li>高 eCPM</li><li>精准定向</li>
+                    </ul>
+                    <a href="https://exoclick.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📊</div>
+                    <h3 class="network-name">TrafficJunky</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">MindGeek 旗下广告网</p>
+                    <ul class="network-features">
+                        <li>Pornhub 等</li><li>大站流量</li><li>高转化</li><li>专业团队</li>
+                    </ul>
+                    <a href="https://trafficjunky.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🍑</div>
+                    <h3 class="network-name">JuicyAds</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">成人广告社区</p>
+                    <ul class="network-features">
+                        <li>社区活跃</li><li>自助平台</li><li>多种广告位</li><li>合理价格</li>
+                    </ul>
+                    <a href="https://juicyads.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔞</div>
+                    <h3 class="network-name">EroAdvertising</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">成人广告联盟</p>
+                    <ul class="network-features">
+                        <li>全球覆盖</li><li>多种格式</li><li>实时统计</li><li>快速审核</li>
+                    </ul>
+                    <a href="https://ero-advertising.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">⭐</div>
+                    <h3 class="network-name">Adsterra Adult</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$5 起付</span></div>
+                    <p class="network-desc">AdSterra 成人垂直</p>
+                    <ul class="network-features">
+                        <li>成人内容</li><li>高 CPM</li><li>多种格式</li><li>及时支付</li>
+                    </ul>
+                    <a href="https://adsterra.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏔️</div>
+                    <h3 class="network-name">HilltopAds Adult</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">HilltopAds 成人广告</p>
+                    <ul class="network-features">
+                        <li>品牌广告主</li><li>高质量</li><li>透明报表</li><li>快速支付</li>
+                    </ul>
+                    <a href="https://hilltopads.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💎</div>
+                    <h3 class="network-name">RichAds Adult</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">RichAds 成人垂直</p>
+                    <ul class="network-features">
+                        <li>Premium 流量</li><li>智能优化</li><li>多格式</li><li>专属经理</li>
+                    </ul>
+                    <a href="https://richads.net" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🅿️</div>
+                    <h3 class="network-name">Zeropark Adult</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">Zeropark 成人广告</p>
+                    <ul class="network-features">
+                        <li>域名重定向</li><li>精准定位</li><li>实时优化</li><li>API 支持</li>
+                    </ul>
+                    <a href="https://zeropark.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔌</div>
+                    <h3 class="network-name">PlugRush</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">成人流量交易平台</p>
+                    <ul class="network-features">
+                        <li>流量交易</li><li>社区驱动</li><li>多种格式</li><li>透明定价</li>
+                    </ul>
+                    <a href="https://plugrush.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏃</div>
+                    <h3 class="network-name">RushAll</h3>
+                    <div class="network-tags"><span class="network-tag">成人</span><span class="network-tag">全球</span><span class="network-tag">$20 起付</span></div>
+                    <p class="network-desc">成人广告平台</p>
+                    <ul class="network-features">
+                        <li>多种格式</li><li>全球覆盖</li><li>实时数据</li><li>高收益</li>
+                    </ul>
+                    <a href="https://rushall.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="游戏广告联盟">
+            <div class="category-header">
+                <span class="category-icon">游</span>
+                <h2 class="category-title">游戏广告联盟</h2>
+                <span class="category-count">10个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">🎮</div>
+                    <h3 class="network-name">Unity Ads</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">Unity 引擎游戏广告</p>
+                    <ul class="network-features">
+                        <li>游戏专家</li><li>激励视频</li><li>内置购买</li><li>高收益</li>
+                    </ul>
+                    <a href="https://unity.com/products/unity-ads" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📲</div>
+                    <h3 class="network-name">AppLovin</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动游戏广告平台</p>
+                    <ul class="network-features">
+                        <li>游戏推广</li><li>变现优化</li><li>MAX mediation</li><li>数据分析</li>
+                    </ul>
+                    <a href="https://applovin.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔩</div>
+                    <h3 class="network-name">ironSource</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">游戏应用变现平台</p>
+                    <ul class="network-features">
+                        <li>游戏变现</li><li> mediation</li><li>数据分析</li><li>收购服务</li>
+                    </ul>
+                    <a href="https://ironsrc.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎬</div>
+                    <h3 class="network-name">Vungle</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">游戏视频广告</p>
+                    <ul class="network-features">
+                        <li>视频广告</li><li>创意优化</li><li>游戏专家</li><li>高参与</li>
+                    </ul>
+                    <a href="https://vungle.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📊</div>
+                    <h3 class="network-name">Chartboost</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动游戏广告</p>
+                    <ul class="network-features">
+                        <li>游戏广告</li><li>程序化</li><li>数据分析</li><li>交叉推广</li>
+                    </ul>
+                    <a href="https://chartboost.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏛️</div>
+                    <h3 class="network-name">AdColony</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">游戏高清视频广告</p>
+                    <ul class="network-features">
+                        <li>高清视频</li><li>即时播放</li><li>品牌广告</li><li>优质体验</li>
+                    </ul>
+                    <a href="https://adcolony.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">👆</div>
+                    <h3 class="network-name">Tapjoy</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">游戏激励广告平台</p>
+                    <ul class="network-features">
+                        <li>激励广告</li><li>虚拟商品</li><li>高参与</li><li>高收益</li>
+                    </ul>
+                    <a href="https://tapjoy.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🌈</div>
+                    <h3 class="network-name">Fyber</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">游戏变现平台</p>
+                    <ul class="network-features">
+                        <li> mediation</li><li>程序化</li><li>数据分析</li><li>高 eCPM</li>
+                    </ul>
+                    <a href="https://fyber.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🌪️</div>
+                    <h3 class="network-name">Digital Turbine</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">应用安装广告</p>
+                    <ul class="network-features">
+                        <li>应用安装</li><li>设备级</li><li>预装合作</li><li>高转化</li>
+                    </ul>
+                    <a href="https://digitalturbine.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🚀</div>
+                    <h3 class="network-name">Liftoff</h3>
+                    <div class="network-tags"><span class="network-tag">游戏</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">移动游戏用户获取</p>
+                    <ul class="network-features">
+                        <li>用户获取</li><li>再营销</li><li>ROI 优化</li><li>数据分析</li>
+                    </ul>
+                    <a href="https://liftoff.io" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
+        <section class="category" id="金融/保险广告">
+            <div class="category-header">
+                <span class="category-icon">金</span>
+                <h2 class="category-title">金融/保险广告</h2>
+                <span class="category-count">10个</span>
+            </div>
+            <div class="networks-grid">
+
+                <article class="network-card">
+                    <div class="network-logo">💰</div>
+                    <h3 class="network-name">MaxBounty</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">CPA 联盟营销网络</p>
+                    <ul class="network-features">
+                        <li>CPA 专家</li><li>金融保险</li><li>高佣金</li><li>专业支持</li>
+                    </ul>
+                    <a href="https://maxbounty.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🦅</div>
+                    <h3 class="network-name">PeerFly</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">CPA 广告联盟</p>
+                    <ul class="network-features">
+                        <li>CPA 为主</li><li>金融垂直</li><li>及时支付</li><li>优质商家</li>
+                    </ul>
+                    <a href="https://peerfly.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💵</div>
+                    <h3 class="network-name">CrakRevenue</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$50 起付</span></div>
+                    <p class="network-desc">CPA 联盟平台</p>
+                    <ul class="network-features">
+                        <li>CPA 专家</li><li>金融保险</li><li>高转化</li><li>专业团队</li>
+                    </ul>
+                    <a href="https://crakrevenue.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📋</div>
+                    <h3 class="network-name">FlexOffers</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">综合 CPA 平台</p>
+                    <ul class="network-features">
+                        <li>商家丰富</li><li>金融保险</li><li>工具完善</li><li>及时支付</li>
+                    </ul>
+                    <a href="https://flexoffers.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">💥</div>
+                    <h3 class="network-name">Impact</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">合作伙伴营销平台</p>
+                    <ul class="network-features">
+                        <li>合作伙伴</li><li>金融保险</li><li>自动化工具</li><li>数据透明</li>
+                    </ul>
+                    <a href="https://impact.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🎌</div>
+                    <h3 class="network-name">Rakuten Advertising</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">乐天联盟营销</p>
+                    <ul class="network-features">
+                        <li>乐天生态</li><li>金融保险</li><li>大品牌</li><li>高信誉</li>
+                    </ul>
+                    <a href="https://rakutenadvertising.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🏆</div>
+                    <h3 class="network-name">Awin</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">£20 起付</span></div>
+                    <p class="network-desc">欧洲联盟平台</p>
+                    <ul class="network-features">
+                        <li>欧洲优势</li><li>金融保险</li><li>多币种</li><li>专业支持</li>
+                    </ul>
+                    <a href="https://awin.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🔗</div>
+                    <h3 class="network-name">CJ Affiliate</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">老牌联盟平台</p>
+                    <ul class="network-features">
+                        <li>老牌平台</li><li>金融保险</li><li>专业工具</li><li>稳定可靠</li>
+                    </ul>
+                    <a href="https://cj.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">🤝</div>
+                    <h3 class="network-name">ShareASale</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">综合联盟平台</p>
+                    <ul class="network-features">
+                        <li>商家众多</li><li>金融保险</li><li>可靠支付</li><li>数据详细</li>
+                    </ul>
+                    <a href="https://shareasale.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>
+                <article class="network-card">
+                    <div class="network-logo">📈</div>
+                    <h3 class="network-name">ClickDealer</h3>
+                    <div class="network-tags"><span class="network-tag">CPA</span><span class="network-tag">全球</span><span class="network-tag">$100 起付</span></div>
+                    <p class="network-desc">全球 CPA 网络</p>
+                    <ul class="network-features">
+                        <li>全球覆盖</li><li>金融保险</li><li>高转化</li><li>专业团队</li>
+                    </ul>
+                    <a href="https://clickdealer.com" class="network-link" target="_blank" rel="nofollow">访问官网 →</a>
+                </article>            </div>
+        </section>
+
         <div class="ad-banner">
             <span>📍 AdSterra 广告位 (底部横幅)</span>
-            <!-- 在此处插入 AdSterra 广告代码 -->
             <div class="ad-code-placeholder">
                 🔶 等待插入 AdSterra 广告代码<br>
                 请从 AdSterra Dashboard 获取广告代码后替换此处
@@ -302,8 +1726,22 @@
             <a href="#">联系方式</a>
             <a href="#">广告合作</a>
             <a href="#">免责声明</a>
+            <a href="#">隐私政策</a>
         </div>
-        <p style="margin-top: 20px; font-size: 13px;">本站收录的广告联盟仅供参考，选择时请根据自身流量特点谨慎决策</p>
+        <p class="footer-note">本站收录的广告联盟仅供参考，选择时请根据自身流量特点、用户群体和合规要求谨慎决策。广告收益因网站类型、流量来源、用户地域等因素而异。</p>
     </footer>
+    
+    <a href="#" class="back-to-top" id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑</a>
+    
+    <script>
+        window.addEventListener('scroll', function() {
+            const btn = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
